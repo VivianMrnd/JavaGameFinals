@@ -122,11 +122,11 @@ public class Monster{
 						}
 					}
 
-					alive = false;
-					compPass.checkDeath();
 				}
 			});
 			monThread.start();
 		}
+		alive = false;
+		compPass.checkDeath();
 	}
 }

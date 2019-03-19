@@ -23,7 +23,6 @@ public class Draw extends JComponent{
 	int backX = 0;
 	int backXx = 3;
 
-
 	// animation states
 	public int state = 0;
 
@@ -47,6 +46,7 @@ public class Draw extends JComponent{
 		monster3 = new Monster(400, 200, this);
 		monster4 = new Monster(200, 300, this);
 		monster5 = new Monster(400, 300, this);
+
 		randomizer = new Random();
 		spawnEnemy();
 		
@@ -250,6 +250,7 @@ public class Draw extends JComponent{
 		g.drawImage(monster3.image, monster3.xPos, monster3.yPos, this);
 		g.drawImage(monster4.image, monster4.xPos, monster4.yPos, this);
 		g.drawImage(monster5.image, monster5.xPos, monster5.yPos, this);
+
 		
 		for(int c = 0; c < monsters.length; c++){		
 			if(monsters[c]!=null){
@@ -273,3 +274,10 @@ public class Draw extends JComponent{
 		}
 	}
 }
+
+/**1. automatic scrolling map
+   2. obstacles
+   3. multiple monsters
+   4. score
+   5. life
+   6. coins/gold	**/
