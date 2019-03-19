@@ -20,6 +20,9 @@ public class Draw extends JComponent{
 	public int y = 300;
 	public int height = 0;
 	public int width = 0;
+	int backX = 0;
+	int backXx = 3;
+
 
 	// animation states
 	public int state = 0;
@@ -65,6 +68,9 @@ public class Draw extends JComponent{
 		Thread gameThread = new Thread(new Runnable(){
 			public void run(){
 				while(true){
+
+					backX -= backXx;
+
 					try{
 						for(int c = 0; c < monsters.length; c++){
 							if(monsters[c]!=null){
@@ -233,7 +239,7 @@ public class Draw extends JComponent{
 	
 	public void paintComponent(Graphics g){
 		super.paintComponent(g);
-		g.drawImage(backgroundImage, 0, 0, this);
+		g.drawImage(backgroundImage, backX, 0, this);
 
 		// character grid for hero
 		// g.setColor(Color.YELLOW);
