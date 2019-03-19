@@ -7,6 +7,7 @@ import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
 import java.net.URL;
 import java.util.Random;
+import java.util.*;
 
 public class Draw extends JComponent{
 
@@ -29,8 +30,20 @@ public class Draw extends JComponent{
 	// enemy
 	public int enemyCount;
 	Monster[] monsters = new Monster[10];
+	LinkedList<Monster> monsterList = new LinkedList<Monster>();
+
+	Monster monster1;
+	Monster monster2;
+	Monster monster3;
+	Monster monster4;
+	Monster monster5;
 
 	public Draw(){
+		monster1 = new Monster(200, 200, this);
+		monster2 = new Monster(300, 200, this);
+		monster3 = new Monster(400, 200, this);
+		monster4 = new Monster(200, 300, this);
+		monster5 = new Monster(400, 300, this);
 		randomizer = new Random();
 		spawnEnemy();
 		
@@ -226,6 +239,11 @@ public class Draw extends JComponent{
 		// g.setColor(Color.YELLOW);
 		// g.fillRect(x, y, width, height);
 		g.drawImage(image, x, y, this);
+		g.drawImage(monster1.image, monster1.xPos, monster1.yPos, this);
+		g.drawImage(monster2.image, monster2.xPos, monster2.yPos, this);
+		g.drawImage(monster3.image, monster3.xPos, monster3.yPos, this);
+		g.drawImage(monster4.image, monster4.xPos, monster4.yPos, this);
+		g.drawImage(monster5.image, monster5.xPos, monster5.yPos, this);
 		
 		for(int c = 0; c < monsters.length; c++){		
 			if(monsters[c]!=null){
