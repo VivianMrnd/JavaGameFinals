@@ -69,8 +69,11 @@ public class Draw extends JComponent{
 			public void run(){
 				while(true){
 
-					backX -= backXx;
-
+					if(backX > getWidth() * -1){
+						backX -= backXx;
+					}else{
+						backX = 0;
+					}	
 					try{
 						for(int c = 0; c < monsters.length; c++){
 							if(monsters[c]!=null){
@@ -240,6 +243,7 @@ public class Draw extends JComponent{
 	public void paintComponent(Graphics g){
 		super.paintComponent(g);
 		g.drawImage(backgroundImage, backX, 0, this);
+		g.drawImage(backgroundImage, backX + getWidth(), 0, this);
 
 		// character grid for hero
 		// g.setColor(Color.YELLOW);
