@@ -16,7 +16,7 @@ public class Draw extends JComponent{
 	public URL resource = getClass().getResource("knight-frame1.png");
 
 	// circle's position
-	public int x = 300;
+	public int x = 100;
 	public int y = 300;
 	public int height = 0;
 	public int width = 0;
@@ -249,11 +249,6 @@ public class Draw extends JComponent{
 		// g.setColor(Color.YELLOW);
 		// g.fillRect(x, y, width, height);
 		g.drawImage(image, x, y, this);
-		g.drawImage(monster1.image, monster1.xPos, monster1.yPos, this);
-		g.drawImage(monster2.image, monster2.xPos, monster2.yPos, this);
-		g.drawImage(monster3.image, monster3.xPos, monster3.yPos, this);
-		g.drawImage(monster4.image, monster4.xPos, monster4.yPos, this);
-		g.drawImage(monster5.image, monster5.xPos, monster5.yPos, this);
 
 		
 		for(int c = 0; c < monsters.length; c++){		
